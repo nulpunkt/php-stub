@@ -1,0 +1,28 @@
+{
+    "name": "nulpunkt/php-stub",
+    "type": "library",
+    "description": "Small stubbing library for making dumb colaborators.",
+    "keywords": ["stubs"],
+    "homepage": "http://github.com/nulpunkt/php-stub",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jesper Skovgård Nielsen",
+            "email": "nulpunkt@gmail.com",
+            "homepage": "http://runlevel0.dk",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+		"squizlabs/php_codesniffer": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Nulpunkt": "src"
+        }
+    }
+}
