@@ -16,7 +16,7 @@ use Nulpunkt\PhpStub\Stub;
 // A standard Stub
 $stub = new Stub([
     'answer' => 42,
-    'callMe' => function($a) { return $a; }
+    'callMe' => function($a) { return $a; } # Anything which is a callable
     
 ]);
 echo $stub->answer(); # => 42
