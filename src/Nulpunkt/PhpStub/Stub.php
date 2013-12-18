@@ -37,6 +37,9 @@ class Stub
 
     public function __get($name)
     {
+        if (array_key_exists($name, $this->methods)) {
+            return $this->methods[$name];
+        }
         return null;
     }
 
