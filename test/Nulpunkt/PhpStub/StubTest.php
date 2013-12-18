@@ -18,6 +18,12 @@ class StubTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(null, $stub->thing);
     }
 
+    public function testCanAccessAsProperty()
+    {
+        $stub = new Stub(['property' => 42]);
+        $this->assertSame(42, $stub->property);
+    }
+
     public function testThatItWillCallAAnonomusCallable()
     {
         $identity = function ($argument) {
