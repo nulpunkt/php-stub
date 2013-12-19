@@ -7,7 +7,9 @@ class Stub
     private $methods = [];
     private $config = [
         'chainable' => true,
-        'throw' => false
+        'throw' => false,
+        'exceptionclass' => 'RuntimeException',
+        'exceptionmessage' => 'Undefined method'
     ];
 
     public function __construct($methods = [], $config = [])
@@ -25,7 +27,7 @@ class Stub
                 return $this->methods[$name];
             }
         } elseif ($this->config['throw']) {
-            throw new \RuntimeException("Undefined method");
+            throw new $this->config['exceptionclass']($this->config['exceptionmessage']);
         }
 
         if ($this->config['chainable'] === true) {

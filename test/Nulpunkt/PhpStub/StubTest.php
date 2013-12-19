@@ -67,6 +67,23 @@ class StubTest extends \PHPUnit_Framework_TestCase
         $stub->getId();
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Bad method call
+     */
+    public function testThatItThrowsSpecifiedExceptionIfConfigured()
+    {
+        $stub = new Stub(
+            [],
+            [
+                'throw' => true,
+                'exceptionclass' => 'InvalidArgumentException',
+                'exceptionmessage' => 'Bad method call'
+            ]
+        );
+        $stub->getId();
+    }
+
     public function testItHasAtoStringMethod()
     {
         $stub = new Stub();
