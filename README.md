@@ -27,7 +27,13 @@ echo $stub->lol()->hey(); # => $stub
 $stub = new Stub([], ['chainable' => false]);
 echo $stub->lol(); # => null
 
-// Different configurations
+// We can throw exceptions on missing functions
 $stub = new Stub([], ['throw' => true]);
 echo $stub->lol(); # throws a RuntimeException
+
+$stub = new Stub(
+	[], 
+	['throw' => true, 'exceptionclass' => 'InvalidArgumentException', 'exceptionmessage' => 'Bad function call']
+);
+echo $stub->lol(); # throws an InvalidArgumentException with message "Bad function call"
 ```
