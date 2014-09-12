@@ -24,6 +24,19 @@ class StubTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(42, $stub->property);
     }
 
+    public function testPropertiesCanBeSeenByIsset()
+    {
+        $stub = new Stub(['property' => 42]);
+        $this->assertTrue(isset($stub->property), 'Properies can be seen by isset');
+    }
+
+    public function testPropertiesCanBeUnset()
+    {
+        $stub = new Stub(['property' => 42]);
+        unset($stub->property);
+        $this->assertFalse(isset($stub->property), 'Properies can be unset');
+    }
+
     public function testThatItWillCallAAnonomusCallable()
     {
         $identity = function ($argument) {

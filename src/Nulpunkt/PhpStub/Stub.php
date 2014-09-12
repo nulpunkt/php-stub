@@ -45,6 +45,16 @@ class Stub
         return null;
     }
 
+    public function __isset($property)
+    {
+        return isset($this->methods[$property]);
+    }
+
+    public function __unset($property)
+    {
+        unset($this->methods[$property]);
+    }
+
     public function __toString()
     {
         return "";
