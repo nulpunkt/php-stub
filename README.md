@@ -18,9 +18,13 @@ $stub = new Stub([
     'answer' => 42,
     'callMe' => function($a) { return $a; } # Anything which is a callable
 ]);
+$stub->foo = 'bar';
+$stub->myMethod = function() { return 50; };
 echo $stub->answer(); # => 42
 echo $stub->answer; # => 42
 echo $stub->callMe('maybe'); # => 'maybe'
+echo $stub->foo; # => 'bar'
+echo $stub->myMethod(); # => 50
 echo $stub->lol()->hey(); # => $stub
 
 // Different configurations
