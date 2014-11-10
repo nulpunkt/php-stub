@@ -12,6 +12,20 @@ class StubTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(42, $stub->getId());
     }
 
+    public function testThatMethodsCanBeAssignedAfterInstantiation()
+    {
+        $stub = new Stub();
+        $stub->myMethod = function() { return 42; };
+        $this->assertSame(42, $stub->myMethod());
+    }
+
+    public function testThatPropertiesCanBeAssignedAfterInstantiation()
+    {
+        $stub = new Stub();
+        $stub->foo = 'bar';
+        $this->assertSame('bar', $stub->foo);
+    }
+
     public function testThatItHasAllProperties()
     {
         $stub = new Stub();

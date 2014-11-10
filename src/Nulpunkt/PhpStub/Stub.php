@@ -44,6 +44,11 @@ class Stub
         }
         return null;
     }
+    
+    public function __set($name, $value)
+    {
+        $this->methods[$name] = $value;
+    }
 
     public function __isset($property)
     {
