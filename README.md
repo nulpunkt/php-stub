@@ -1,4 +1,4 @@
-# php-stub
+# php-stub [![Build Status](https://travis-ci.org/nulpunkt/php-stub.png?branch=master)](https://travis-ci.org/nulpunkt/php-stub)
 
 A library for making colaborators, meant for testing.
 
