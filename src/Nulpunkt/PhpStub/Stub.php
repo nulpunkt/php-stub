@@ -4,15 +4,15 @@ namespace Nulpunkt\PhpStub;
 
 class Stub
 {
-    private $methods = [];
-    private $config = [
+    private $methods = array();
+    private $config = array(
         'chainable' => true,
         'throw' => false,
         'exceptionclass' => 'RuntimeException',
         'exceptionmessage' => 'Undefined method'
-    ];
+    );
 
-    public function __construct($methods = [], $config = [])
+    public function __construct($methods = array(), $config = array())
     {
         $this->methods = $methods;
         $this->config = array_merge($this->config, $config);
